@@ -1,7 +1,9 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "./entity/User";
-import { Enterprise } from "./entity/Enterprise";
+import { User } from "./Domain/Entities/User/User";
+import { Enterprise } from "./Domain/Entities/Enterprise/EnterpriseEntity";
+import { PublicationEntity } from "./Domain/Entities/Publication/PublicationEntity";
+import { NotificationEntity } from "./Domain/Entities/Notification/NotificationEntity";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -12,7 +14,12 @@ export const AppDataSource = new DataSource({
     database: "rvaougxp",
     synchronize: true,
     logging: false,
-    entities: [User, Enterprise],
+    entities: [
+        User,
+        Enterprise,
+        PublicationEntity,
+        NotificationEntity,
+    ],
     migrations: [],
     subscribers: [],
 })

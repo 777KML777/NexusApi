@@ -1,29 +1,21 @@
-import { UserController } from "./controller/UserController"
-// import {Router, request, response, Request, Response } from "express"
-// import { one } "./controller/UserController"
+import {
+    Router, 
+    request,
+    response,
+    Request,
+    Response
+} from "express"; 
 
-// const routes = Router()
+import {
+    actionTest, userDetail
+} from "./controller/HomeController"
 
-export const Routes = [{
-    method: "get",
-    route: "/users",
-    controller: UserController,
-    action: "all"
-}, {
-    method: "get",
-    route: "/users/:id",
-    controller: UserController,
-    action: "one"
-}, {
-    method: "post",
-    route: "/users",
-    controller: UserController,
-    action: "save"
-}, {
-    method: "delete",
-    route: "/users/:id",
-    controller: UserController,
-    action: "remove"
-}]
+const routes = Router();
 
-// routes.get(Routes[1].route, )
+// Here all endpoints application 
+//routes.typeVerb(/controller, action)
+routes.get("/home", actionTest)
+routes.get("/home/:id", userDetail)
+// Here all endpoints application 
+
+export default routes; 
