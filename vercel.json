@@ -1,5 +1,5 @@
 {
-    "devCommand": "npm run dev",
+    "devCommand": "npm start",
     "builds": [
         {
             "src": "src/index.ts",
@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/src/index.ts"
+            "dest": "src/index.ts"
         }
     ]
 }
