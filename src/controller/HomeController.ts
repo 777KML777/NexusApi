@@ -5,6 +5,7 @@ import { PublicationEntity } from "../Domain/Entities/Publication/PublicationEnt
 import { User } from "../Domain/Entities/User/User";
 import { HomeServices } from "../Services/HomeServices";
 import { Request, Response } from "express";
+import { json } from "body-parser";
 
 
 // export class HomeController {
@@ -25,6 +26,15 @@ const _homeServices = new HomeServices()
 export const actionTest = async (
     request: Request,
     response: Response) => {
+    const data = { obj: [{name: 'teste', countInstallments: 1 }] }
+    const fs = require('fs'); 
+
+    fs.writeFile('bankJson.json', JSON.stringify(data).toString() , (err) => {
+        if(err) throw err;
+        console.log('arquivo salvo com sucesso')
+    })
+
+
     const jsonTest = await "Bati no endpoint"
     return response.json(jsonTest)
 }
