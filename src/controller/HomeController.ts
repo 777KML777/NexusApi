@@ -1,11 +1,4 @@
-import { request } from "http";
-import { AppDataSource } from "../data-source";
-import { Enterprise } from "../Domain/Entities/Enterprise/EnterpriseEntity";
-import { PublicationEntity } from "../Domain/Entities/Publication/PublicationEntity";
-import { User } from "../Domain/Entities/User/User";
-import { HomeServices } from "../Services/HomeServices";
 import { Request, Response } from "express";
-import { json } from "body-parser";
 
 
 // export class HomeController {
@@ -20,28 +13,49 @@ import { json } from "body-parser";
 // const postRepository =
 //     AppDataSource.getRepository(PublicationEntity);
 
-const _homeServices = new HomeServices()
 
-
-export const actionTest = async (
+export const homeData = async (
     request: Request,
     response: Response) => {
-    const data = { obj: [{name: 'teste', countInstallments: 1 }] }
-    const fs = require('fs'); 
 
-    fs.writeFile('bankJson.json', JSON.stringify(data).toString() , (err) => {
-        if(err) throw err;
+    console.log("Bati no homeData")
+        
+    const fs = require('fs')
+
+    // Porque no console ele não mostrar o \ e no navegador sim. 
+    // const xData = fs.readFile('bankJson.json', (err, data) => {
+    //     if(err) throw err; 
+
+    //     console.log("data", data) 
+    //     console.log("xData", xData)
+    // })
+
+
+    const data = fs.readFileSync('bankJson.json')
+    let x : string = data.toString()
+    let y = x.replace(/\\/g, "")
+    const z = {obj: "teste", countInstallmest: 1}
+    
+    console.log(y)
+
+    return response.json(JSON.parse(y))
+}
+
+export const createBank = async (
+    request: Request,
+    response: Response) => {
+    const data = { obj: [{ name: 'teste', countInstallments: 1 }] }
+    const fs = require('fs');
+
+    fs.writeFile('bankJson.json', JSON.stringify(data).toString(), (err) => {
+        if (err) throw err;
         console.log('arquivo salvo com sucesso')
     })
 
 
     const jsonTest = await "Bati no endpoint"
-    return response.json(jsonTest)
-}
 
-export const userDetail = async (
-    request: Request,
-    response: Response) => {
-        
-    return response.json(await _homeServices.homeData());
+
+    // return response.json(await _homeServices.homeData());
+    return jsonTest
 }
