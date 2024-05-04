@@ -1,1 +1,32 @@
-{"obj":[{"name":"Santander","countInstallments":1}]}
+{
+    "banks": [
+        {
+            "bankName": "",
+            "balance": ""
+        },
+        {
+            "bankName": "Nubank",
+            "balance": "400"
+        },
+        {
+            "bankName": "Santander",
+            "balance": "661,13"
+        },
+        {
+            "bankName": "Mercado Pago",
+            "balance": "720,13"
+        },
+        {
+            "bankName": "C6 Bank ",
+            "balance": "145,95"
+        },
+        {
+            "bankName": "picpay",
+            "balance": "8000"
+        },
+        {
+            "bankName": "pagseguro",
+            "balance": "717,76"
+        }
+    ]
+}
