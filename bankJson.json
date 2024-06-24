@@ -27,6 +27,10 @@
         {
             "bankName": "pagseguro",
             "balance": "717,76"
+        },
+        {
+            "bankName": "Teste Medieval",
+            "balance": "3303"
         }
     ]
 }
