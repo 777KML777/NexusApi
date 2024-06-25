@@ -1,36 +1,28 @@
 {
     "banks": [
         {
-            "bankName": "",
-            "balance": ""
-        },
-        {
             "bankName": "Nubank",
-            "balance": "400"
+            "balance": 400
         },
         {
             "bankName": "Santander",
-            "balance": "661,13"
+            "balance": 661.13
         },
         {
             "bankName": "Mercado Pago",
-            "balance": "720,13"
+            "balance": 720.13
         },
         {
             "bankName": "C6 Bank ",
-            "balance": "145,95"
+            "balance": 145.95
         },
         {
-            "bankName": "picpay",
-            "balance": "8000"
+            "bankName": "Pic Pay",
+            "balance": 8.000
         },
         {
-            "bankName": "pagseguro",
-            "balance": "717,76"
-        },
-        {
-            "bankName": "Teste Medieval",
-            "balance": "3303"
+            "bankName": "Pag Bank",
+            "balance": 717.76
         }
     ]
 }

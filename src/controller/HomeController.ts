@@ -1,14 +1,15 @@
 import { Request, Response } from "express";
+import { readRepoFile } from "../utils";
 
 export const homeData = async (
     request: Request,
     response: Response) => {
 
-    const fs = require('fs')
-    const data = fs.readFileSync('bankJson.json')
-    let resp = JSON.parse(data)
+    // const fs = require('fs')
+    // const data = fs.readFileSync('bankJson.json')
+    // let resp = JSON.parse(data)
 
-    return response.json(resp)
+    return response.json(readRepoFile('bankJson.json'))
 }
 
 export const createBank = async (
