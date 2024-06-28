@@ -16,6 +16,7 @@ export const createBank = async (
     request: Request,
     response: Response) => {
 
+    // Warn: Passar type operation para não precisar ter um fs fora do readRepoFile? 
     const fs = require('fs')
     const data = fs.readFileSync('bankJson.json')
     let dataJson = JSON.parse(data)
