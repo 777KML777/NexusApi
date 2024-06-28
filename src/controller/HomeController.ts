@@ -1,35 +1,28 @@
 import { Request, Response } from "express";
 import { readRepoFile } from "../utils";
+import { HomeDto } from "../Dto/HomeDto";
 
 export const homeData = async (
     request: Request,
     response: Response) => {
 
-    // const fs = require('fs')
-    // const data = fs.readFileSync('bankJson.json')
-    // let resp = JSON.parse(data)
+    const homeData = new HomeDto(); 
+    // Total das dívidas 
+    // *** para isso é necessário ter o repositório de despesas *** 
 
-    return response.json(readRepoFile('bankJson.json'))
-}
-
-export const createBank = async (
-    request: Request,
-    response: Response) => {
-
-    // Warn: Passar type operation para não precisar ter um fs fora do readRepoFile? 
-    const fs = require('fs')
-    const data = fs.readFileSync('bankJson.json')
-    let dataJson = JSON.parse(data)
-    dataJson.banks.push(request.body)
+    let bankRepository = readRepoFile('bankJson.json')
     
-    fs.writeFile('bankJson.json'
-        , JSON.stringify(dataJson), (error) => {
-            if(error) throw error;
-            console.log('Saved Success File')
+    bankRepository.banks.forEach((item) =>
+        {
+            let x = {id: 0, bankName: '', balance: 0, available: false}
+            x = item
+            homeData.banks.push({id: x.id, bankName: x.bankName, balance: x.balance, availableBalance: x.available})
         }
     )
 
-    return response.json().statusCode = 200
+    homeData.sumTotalBalance()
+
+    return response.json(homeData)
 }
 
 // export class HomeController {
