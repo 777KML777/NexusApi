@@ -1,6 +1,4 @@
-import { json } from "body-parser";
 import { HomeDto } from "../Dto/HomeDto";
-import { RecentPost } from "../Dto/RecentPost";
 import { PublicationRepository } from "../Repositories/Publication/PublicationRepository";
 
 export class HomeServices {
@@ -18,16 +16,16 @@ export class HomeServices {
 
         let publishes = await this._publicationRepository.getPostByEnterpriseId(1)
 
-        jsonData.enterpriseId = publishes[0].enterpriseId;
-        publishes.forEach((item, index) => {
+        // jsonData.enterpriseId = publishes[0].enterpriseId;
+        // publishes.forEach((item, index) => {
 
-            jsonData.recentPosts.push(new RecentPost(
-                item.datePost,
-                item.description,
-                item.image,
-                item.userId.toString()))
+        //     jsonData.recentPosts.push(new RecentPost(
+        //         item.datePost,
+        //         item.description,
+        //         item.image,
+        //         item.userId.toString()))
 
-        })
+        // })
 
         return jsonData
     }
