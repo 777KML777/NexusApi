@@ -7,21 +7,19 @@ import {
 } from "express"; 
 
 import {
-    homeData, createBank
+    homeData
 } from "./controller/HomeController"
-import { getById } from "./controller/BankController";
+import { getById, createBank, updateBank } from "./controller/BankController";
 
 const routes = Router();
 
-// Here all endpoints application 
-//routes.typeVerb(/controller, action)
-
-// routes get 
+// HomeController Routes 
 routes.get("/home", homeData)
 
-// routes post 
+// BankController Routes
 routes.get("/Bank/getById", getById)
-routes.post("/create-bank", createBank)
-// Here all endpoints application 
+routes.post("/Bank/create", createBank)
+routes.put("/Bank/update", updateBank)
 
+// Here all endpoints application 
 export default routes; 
