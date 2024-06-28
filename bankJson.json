@@ -1,32 +1,46 @@
 {
     "banks": [
         {
+            "id": 1,
             "bankName": "Nubank",
-            "balance": 400
+            "balance": 5.16, 
+            "available": true
         },
         {
+            "id": 2,
             "bankName": "Santander",
-            "balance": 661.13
+            "balance": 50.19, 
+            "available": true
         },
         {
+            "id": 3,
             "bankName": "Mercado Pago",
-            "balance": 720.13
+            "balance": 7.13, 
+            "available": true
         },
         {
+            "id": 4,
             "bankName": "C6 Bank ",
-            "balance": 145.95
+            "balance": 2.25, 
+            "available": true
         },
         {
+            "id": 5,
             "bankName": "Pic Pay",
-            "balance": 8
+            "balance": 1.54, 
+            "available": true
         },
         {
+            "id": 6,
             "bankName": "Pag Bank",
-            "balance": 717.76
+            "balance": 10.54, 
+            "available": true
         },
         {
+            "id": 7,
             "bankName": "FGTS",
-            "balance": "23301.30"
+            "balance": 23.3, 
+            "available": false
         }
     ]
 }
