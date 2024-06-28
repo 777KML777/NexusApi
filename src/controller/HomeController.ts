@@ -9,8 +9,9 @@ export const homeData = async (
     const homeData = new HomeDto(); 
     // Total das dívidas 
     // *** para isso é necessário ter o repositório de despesas *** 
-
-    let bankRepository = readRepoFile('bankJson.json')
+    // src\controller\HomeController.ts
+    // src\Repositories\bankJson.json
+    let bankRepository = readRepoFile('src/Repositories/bankJson.json')
     
     bankRepository.banks.forEach((item) =>
         {
