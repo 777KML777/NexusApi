@@ -18,11 +18,15 @@
         },
         {
             "bankName": "Pic Pay",
-            "balance": 8.000
+            "balance": 8
         },
         {
             "bankName": "Pag Bank",
             "balance": 717.76
+        },
+        {
+            "bankName": "FGTS",
+            "balance": "23301.30"
         }
     ]
 }
