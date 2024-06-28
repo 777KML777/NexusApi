@@ -3,7 +3,7 @@ import {
     Response
 } from "express"
 
-import { readRepoFile } from "../utils"
+import { readRepoFile } from "../utils/utils"
 import { request } from "http"
 
 export const getById = async (

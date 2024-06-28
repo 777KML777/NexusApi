@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { readRepoFile } from "../utils";
+import { readRepoFile } from "../utils/utils";
 import { HomeDto } from "../Dto/HomeDto";
 
 export const homeData = async (
