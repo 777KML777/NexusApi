@@ -9,6 +9,7 @@ import {
 import {
     homeData, createBank
 } from "./controller/HomeController"
+import { getById } from "./controller/BankController";
 
 const routes = Router();
 
@@ -19,6 +20,7 @@ const routes = Router();
 routes.get("/home", homeData)
 
 // routes post 
+routes.get("/Bank/getById", getById)
 routes.post("/create-bank", createBank)
 // Here all endpoints application 
 
