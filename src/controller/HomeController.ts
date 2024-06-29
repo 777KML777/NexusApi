@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { readRepoFile } from "../utils/utils";
 import { HomeDto } from "../Dto/HomeDto";
+// import {bankRepository} "@/Repositories/bankJson.json"
 
 export const homeData = async (
     request: Request,
@@ -11,7 +12,7 @@ export const homeData = async (
     // *** para isso é necessário ter o repositório de despesas *** 
     // src\controller\HomeController.ts
     // src\Repositories\bankJson.json
-    let bankRepository = readRepoFile('src/Repositories/bankJson.json')
+    let bankRepository = readRepoFile('../Repositories/bankJson.json')
     
     bankRepository.banks.forEach((item) =>
         {
