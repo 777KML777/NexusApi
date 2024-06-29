@@ -14,7 +14,6 @@ export class HomeDto {
         this.banks.forEach((item) => {
             this.totalBalance += Number(item.balance)
 
-            console.log('isprimindo nessa porra',item.availableBalance, item.balance)
             this.totalAvailableBalance +=  Boolean(item.availableBalance) == true?
              Number(item.balance) : 0
         })

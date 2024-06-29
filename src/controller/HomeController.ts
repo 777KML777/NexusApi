@@ -1,19 +1,22 @@
 import { Request, Response } from "express";
 import { readRepoFile } from "../utils/utils";
 import { HomeDto } from "../Dto/HomeDto";
-// import {bankRepository} "@/Repositories/bankJson.json"
+import {BankJsonDto } from "../Repositories/bankJsontype"
 
 export const homeData = async (
     request: Request,
     response: Response) => {
 
     const homeData = new HomeDto(); 
+    const yellow = new BankJsonDto();
+
     // Total das dívidas 
     // *** para isso é necessário ter o repositório de despesas *** 
     // src\controller\HomeController.ts
     // src\Repositories\bankJson.json
-    let bankRepository = readRepoFile('../Repositories/bankJson.json')
-    
+    // let bankRepository = readRepoFile('src/Repositories/bankJson.json')
+
+    let bankRepository = yellow;
     bankRepository.banks.forEach((item) =>
         {
             let x = {id: 0, bankName: '', balance: 0, available: false}
@@ -21,6 +24,8 @@ export const homeData = async (
             homeData.banks.push({id: x.id, bankName: x.bankName, balance: x.balance, availableBalance: x.available})
         }
     )
+
+    console.log(yellow);
 
     homeData.sumTotalBalance()
 
