@@ -10,7 +10,7 @@ export const getById = async (
     request: Request,
     response: Response
 ) => {
-    const data = readRepoFile('bankJson.json');
+    const data = readRepoFile('src/Repositories/bankJson.json');
 
     console.log("Params", request.query)
 
@@ -34,11 +34,11 @@ export const createBank = async (
 
     // Warn: Passar type operation para não precisar ter um fs fora do readRepoFile? 
     const fs = require('fs')
-    const data = fs.readFileSync('bankJson.json')
+    const data = fs.readFileSync('src/Repositories/bankJson.json')
     let dataJson = JSON.parse(data)
     dataJson.banks.push(request.body)
 
-    fs.writeFile('bankJson.json'
+    fs.writeFile('src/Repositories/bankJson.json'
         , JSON.stringify(dataJson), (error) => {
             if (error) throw error;
             console.log('Saved Success File')
@@ -52,7 +52,7 @@ export const updateBank = async (
     request: Request,
     response: Response) => {
 
-    const data = readRepoFile('bankJson.json');
+    const data = readRepoFile('src/Repositories/bankJson.json');
 
     console.log("potencial novo banco", request.body)
 
@@ -70,7 +70,7 @@ export const updateBank = async (
     data.banks = updatedList;
 
     const fs = require('fs')
-    fs.writeFile('bankJson.json'
+    fs.writeFile('src/Repositories/bankJson.json'
         , JSON.stringify(data), (error) => {
             if (error) throw error;
             console.log('Saved Success File')

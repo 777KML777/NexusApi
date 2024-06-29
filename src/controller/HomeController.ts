@@ -57,7 +57,7 @@ export const homeData = async (
 
     // console.log("data", data)
 
-    // const dataFile = fs.readFileSync('bankJson.json')
+    // const dataFile = fs.readFileSync('src/Repositories/bankJson.json')
     // let x: string = dataFile.toString()
     // let y = x.replace(/\\/g, "")
     // let oldRegister = JSON.parse(y)
@@ -86,7 +86,7 @@ export const homeData = async (
 
     // )
 
-    // fs.writeFile('bankJson.json', JSON.stringify(saveRegister).toString(), (err) => {
+    // fs.writeFile('src/Repositories/bankJson.json', JSON.stringify(saveRegister).toString(), (err) => {
     //     if (err) throw err;
     //     console.log('arquivo salvo com sucesso')
     // })
