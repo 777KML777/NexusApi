@@ -10,8 +10,16 @@ export const getById = async (
     request: Request,
     response: Response
 ) => {
-    const data = readRepoFile('src/Repositories/bankJson.json');
+    // ESTOU TRABALHANDO A PARTIR DAQUI 
+    const path = require('path');
 
+    // Obtendo o caminho absoluto de um arquivo
+    // const filePath = path.join(__dirname, 'src', 'Repositories', 'bankJson.json');
+    const filePath = path.join(__dirname, 'Repositories', 'bankJson.json');
+
+    console.log(filePath); // Imprime o caminho absoluto do arquivo
+
+    const data = readRepoFile(filePath);
     console.log("Params", request.query)
 
     let selectedBank = data.banks
@@ -33,12 +41,20 @@ export const createBank = async (
     // converter o balance para number
 
     // Warn: Passar type operation para não precisar ter um fs fora do readRepoFile? 
+    // ESTOU TRABALHANDO A PARTIR DAQUI 
+    const path = require('path');
+
+    // Obtendo o caminho absoluto de um arquivo
+    // const filePath = path.join(__dirname, 'src', 'Repositories', 'bankJson.json');
+    const filePath = path.join(__dirname, 'Repositories', 'bankJson.json');
+
+    console.log(filePath); // Imprime o caminho absoluto do arquivo
     const fs = require('fs')
-    const data = fs.readFileSync('src/Repositories/bankJson.json')
+    const data = fs.readFileSync(filePath)
     let dataJson = JSON.parse(data)
     dataJson.banks.push(request.body)
 
-    fs.writeFile('src/Repositories/bankJson.json'
+    fs.writeFile(filePath
         , JSON.stringify(dataJson), (error) => {
             if (error) throw error;
             console.log('Saved Success File')
@@ -51,8 +67,16 @@ export const createBank = async (
 export const updateBank = async (
     request: Request,
     response: Response) => {
+    // ESTOU TRABALHANDO A PARTIR DAQUI 
+    const path = require('path');
 
-    const data = readRepoFile('src/Repositories/bankJson.json');
+    // Obtendo o caminho absoluto de um arquivo
+    // const filePath = path.join(__dirname, 'src', 'Repositories', 'bankJson.json');
+    const filePath = path.join(__dirname, 'Repositories', 'bankJson.json');
+
+    console.log(filePath); // Imprime o caminho absoluto do arquivo
+
+    const data = readRepoFile(filePath);
 
     console.log("potencial novo banco", request.body)
 
@@ -66,11 +90,11 @@ export const updateBank = async (
         { ...b, balance: Number(request.body.balance) } : b
         // b = request.body as number : b 
     )
-    
+
     data.banks = updatedList;
 
     const fs = require('fs')
-    fs.writeFile('src/Repositories/bankJson.json'
+    fs.writeFile(filePath
         , JSON.stringify(data), (error) => {
             if (error) throw error;
             console.log('Saved Success File')
