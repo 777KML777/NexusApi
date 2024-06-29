@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { readRepoFile } from "../utils/utils";
 import { HomeDto } from "../Dto/HomeDto";
-import {BankJsonDto } from "../Repositories/bankJsontype"
+import { BankJsonDto } from "../Repositories/bankJsontype"
 
 export const homeData = async (
     request: Request,
     response: Response) => {
 
-    const homeData = new HomeDto(); 
+    const homeData = new HomeDto();
     const yellow = new BankJsonDto();
 
     // Total das dívidas 
@@ -16,13 +16,23 @@ export const homeData = async (
     // src\Repositories\bankJson.json
     // let bankRepository = readRepoFile('src/Repositories/bankJson.json')
 
-    let bankRepository = yellow;
-    bankRepository.banks.forEach((item) =>
-        {
-            let x = {id: 0, bankName: '', balance: 0, available: false}
-            x = item
-            homeData.banks.push({id: x.id, bankName: x.bankName, balance: x.balance, availableBalance: x.available})
-        }
+    // ESTOU TRABALHANDO A PARTIR DAQUI 
+    const path = require('path');
+
+    // Obtendo o caminho absoluto de um arquivo
+    // const filePath = path.join(__dirname, 'src', 'Repositories', 'bankJson.json');
+    const filePath = path.join(__dirname, 'Repositories', 'bankJson.json');
+
+    console.log(filePath); // Imprime o caminho absoluto do arquivo
+
+    let bankRepository = readRepoFile(filePath)
+
+    // let bankRepository = yellow;
+    bankRepository.banks.forEach((item) => {
+        let x = { id: 0, bankName: '', balance: 0, available: false }
+        x = item
+        homeData.banks.push({ id: x.id, bankName: x.bankName, balance: x.balance, availableBalance: x.available })
+    }
     )
 
     console.log(yellow);
@@ -44,7 +54,7 @@ export const homeData = async (
 // const postRepository =
 //     AppDataSource.getRepository(PublicationEntity);
 
-    // // testar isso aqui depois somente com javascript 
+    // // testar isso aqui depois somente com javascript
     // let saveRegister: {
     //     banks: [
     //         {
