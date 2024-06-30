@@ -25,7 +25,8 @@ export const homeData = async (
 
     console.log(filePath); // Imprime o caminho absoluto do arquivo
 
-    let bankRepository = readRepoFile(filePath)
+    // let bankRepository = readRepoFile(filePath)
+    let bankRepository = readRepoFile('src/controller/Repositories/bankJson.json')
 
     // let bankRepository = yellow;
     bankRepository.banks.forEach((item) => {
