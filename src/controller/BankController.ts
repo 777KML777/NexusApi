@@ -19,7 +19,7 @@ export const getById = async (
 
     console.log("src/controller/Repositories/bankJson.json"); // Imprime o caminho absoluto do arquivo
 
-    const data = readRepoFile(filePath);
+    const data = readRepoFile("src/controller/Repositories/bankJson.json");
     console.log("Params", request.query)
 
     let selectedBank = data.banks
@@ -50,7 +50,7 @@ export const createBank = async (
 
     console.log("src/controller/Repositories/bankJson.json"); // Imprime o caminho absoluto do arquivo
     const fs = require('fs')
-    const data = fs.readFileSync(filePath)
+    const data = fs.readFileSync("src/controller/Repositories/bankJson.json")
     let dataJson = JSON.parse(data)
     dataJson.banks.push(request.body)
 
