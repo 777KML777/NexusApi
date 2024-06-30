@@ -17,7 +17,7 @@ export const getById = async (
     // const filePath = path.join(__dirname, 'src', 'Repositories', 'bankJson.json');
     const filePath = path.join(__dirname, 'Repositories', 'bankJson.json');
 
-    console.log(filePath); // Imprime o caminho absoluto do arquivo
+    console.log("src/controller/Repositories/bankJson.json"); // Imprime o caminho absoluto do arquivo
 
     const data = readRepoFile(filePath);
     console.log("Params", request.query)
@@ -48,7 +48,7 @@ export const createBank = async (
     // const filePath = path.join(__dirname, 'src', 'Repositories', 'bankJson.json');
     const filePath = path.join(__dirname, 'Repositories', 'bankJson.json');
 
-    console.log(filePath); // Imprime o caminho absoluto do arquivo
+    console.log("src/controller/Repositories/bankJson.json"); // Imprime o caminho absoluto do arquivo
     const fs = require('fs')
     const data = fs.readFileSync(filePath)
     let dataJson = JSON.parse(data)
@@ -76,7 +76,7 @@ export const updateBank = async (
 
     console.log(filePath); // Imprime o caminho absoluto do arquivo
 
-    const data = readRepoFile(filePath);
+    const data = readRepoFile("src/controller/Repositories/bankJson.json");
 
     console.log("potencial novo banco", request.body)
 
@@ -94,7 +94,7 @@ export const updateBank = async (
     data.banks = updatedList;
 
     const fs = require('fs')
-    fs.writeFile(filePath
+    fs.writeFile("src/controller/Repositories/bankJson.json"
         , JSON.stringify(data), (error) => {
             if (error) throw error;
             console.log('Saved Success File')
