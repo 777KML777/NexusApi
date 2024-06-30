@@ -3,7 +3,7 @@
         {
             "id": 1,
             "bankName": "Nubank",
-            "balance": 5.16,
+            "balance": 53.16,
             "available": true
         },
         {
@@ -21,7 +21,7 @@
         {
             "id": 4,
             "bankName": "C6 Bank ",
-            "balance": 2.25,
+            "balance": 2728.25,
             "available": true
         },
         {

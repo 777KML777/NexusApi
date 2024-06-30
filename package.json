@@ -3,9 +3,14 @@
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
+   "engines": {
+      "node": ">=18"
+   },
    "devDependencies": {
+      "@swc/core": "^1.6.6",
       "@types/node": "^16.11.10",
       "ts-node": "10.9.1",
+      "tsup": "^8.1.0",
       "typescript": "4.5.2"
    },
    "dependencies": {
@@ -20,6 +25,7 @@
    },
    "scripts": {
       "start": "ts-node src/index.ts",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-commonjs",
+      "build": "tsup src --out-dir build"
    }
 }
