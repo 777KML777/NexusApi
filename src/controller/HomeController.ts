@@ -36,7 +36,7 @@ export const homeData = async (
         })
     })
 
-    let expenses = readRepoFile('src/controller/Repositories/teste.json')
+    let expenses = readRepoFile('src/controller/Repositories/testeRename.json')
     // let bankRepository = yellow;
     expenses.forEach((item) => {
         homeData.totalExpenses += Number(item.amount) 
