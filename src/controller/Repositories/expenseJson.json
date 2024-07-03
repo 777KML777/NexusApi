@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1, 
+        "idbank": 2,
+        "separated": false, 
+        "inactive": false, 
+        "dateLastInstallments": "2025-01-07", 
+        "dateFirsInstallments": "2023-01-17", 
+        "remainingInstallments": 6,
+        "amount": 1209, 
+        "countInstallments": 24,
+        "describre": "FIAP Mensalidade", 
+        "name": "FIAP", 
+        "paymentType": "Boleto"
+    }, 
+    {
+        "id": 2, 
+        "idbank": 2,
+        "separated": false, 
+        "inactive": false, 
+        "dateLastInstallments": "2025-01-07", 
+        "dateFirsInstallments": "2023-01-17", 
+        "remainingInstallments": 3,
+        "amount": 156, 
+        "countInstallments": 5,
+        "describre": "Aghata usou o cartão.", 
+        "name": "Show Bruno Mars", 
+        "paymentType": "Crédito"
+    }
+
+]
