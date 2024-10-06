@@ -1,22 +1,22 @@
 [
     {
         "name": "Faculdade Restante",
-        "amount": 7256
+        "amount": 3627
     }, 
     {
         "name": "Cartão Way", 
-        "amount": 6936.83
+        "amount": 7147.07
     }, 
     {
         "name": "Cartão C6 Bank", 
-        "amount": 3386.34
+        "amount": 2029.62
     }, 
     {
         "name": "Cartão Nubank", 
-        "amount": 4764.16
+        "amount": 4695.45
     }, 
     {
         "name": "Mercado Pago - Livre", 
-        "amount": 1410
+        "amount": 360
     }
 ]

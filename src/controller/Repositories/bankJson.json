@@ -1,1 +1,58 @@
-{"banks":[{"id":1,"bankName":"Nubank","balance":103.17,"available":true},{"id":2,"bankName":"Santander","balance":977.16,"available":true},{"id":3,"bankName":"Mercado Pago","balance":177.73,"available":true},{"id":4,"bankName":"C6 Bank ","balance":50.34,"available":true},{"id":5,"bankName":"Pic Pay","balance":102.57,"available":true},{"id":6,"bankName":"Pag Bank","balance":1072.54,"available":true},{"id":7,"bankName":"FGTS","balance":23301.3,"available":false},{"id":8,"bankName":"Cofre","balance":7000,"available":true},{"id":9,"bankName":"C6 Bank Cartão C","balance":31000,"available":true}]}
+{
+    "banks": [
+        {
+            "id": 1,
+            "bankName": "Nubank",
+            "balance": 725.05,
+            "available": true
+        },
+        {
+            "id": 2,
+            "bankName": "Santander",
+            "balance": 7000,
+            "available": true
+        },
+        {
+            "id": 3,
+            "bankName": "Mercado Pago",
+            "balance": 931.16,
+            "available": true
+        },
+        {
+            "id": 4,
+            "bankName": "C6 Bank ",
+            "balance": 716.62,
+            "available": true
+        },
+        {
+            "id": 5,
+            "bankName": "Pic Pay",
+            "balance": 77.07,
+            "available": true
+        },
+        {
+            "id": 6,
+            "bankName": "Pag Bank",
+            "balance": 3971.80,
+            "available": true
+        },
+        {
+            "id": 7,
+            "bankName": "FGTS",
+            "balance": 26776.15,
+            "available": false
+        },
+        {
+            "id": 8,
+            "bankName": "Cofre",
+            "balance": 4900,
+            "available": true
+        },
+        {
+            "id": 9,
+            "bankName": "C6 Bank Cartão C",
+            "balance": 33288.01,
+            "available": true
+        }
+    ]
+}
